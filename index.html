@@ -20,41 +20,50 @@
       color: #333;
       padding: 10px 20px;
       border-radius: 8px;
-      font-size: 2em; /* 大きく */
-      font-weight: bold; /* 太字 */
+      font-size: 2em;
+      font-weight: bold;
       display: inline-block;
       margin: 20px 0;
     }
     .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 10px;
+      display: block; /* ブロックにして幅を効かせる */
+      width: 95vw; /* 画面幅の95% */
+      max-width: 400px; /* 幅の最大値 */
+      padding: 10px 0;
+      margin: 10px auto; /* 中央寄せ */
       font-size: 1.1em;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      box-sizing: border-box; /* パディング込みで幅計算 */
     }
     .copy-btn {
       background-color: #28a745;
       color: white;
     }
     .line-btn {
-      background-color: #007a00; /* ちょっと暗めの緑 */
+      background-color: #007a00;
       color: white;
       text-decoration: none;
-      font-size: 1.3em; /* 文字を少し大きく */
+      font-size: 1.3em;
     }
     .close-btn {
-      background-color: #555555; /* 濃いめのグレー */
+      background-color: #555555;
       color: white;
     }
+    #lineNotice {
+      max-width: 400px;
+      margin: 0 auto 20px;
+      font-size: 0.9em;
+      color: #555;
+      text-align: left;
+      line-height: 1.4em;
+    }
     #notice {
-      margin-top: 15px;
+      max-width: 400px;
+      margin: 0 auto;
       color: #555;
       font-size: 0.9em;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
       text-align: left;
       line-height: 1.4em;
     }
@@ -68,22 +77,21 @@
 
   <div id="copyText">apple</div>
 
-  <!-- 追加：コピーするボタン -->
-  <br>
   <button class="btn copy-btn" onclick="copyWord()">コピーする</button>
-
-  <br />
 
   <a id="lineShareBtn" class="btn line-btn" href="#" target="_blank">LINEで送る</a>
 
-  <br />
+  <!-- 「LINEで送る」の下の注意文 -->
+  <div id="lineNotice">
+    ・LINEアプリがインストールされていない場合は送れません。<br>
+    ・スマホからアクセスしてください。
+  </div>
 
   <button class="btn close-btn" onclick="closePage()">このページを閉じる</button>
 
   <div id="notice">
     ※このページはスマホでの閲覧を想定しています。<br>
-    ※「このページを閉じる」ボタンが正常に動作しない場合は、ブラウザの戻るボタンをお使いください。<br>
-    ※LINEアプリがインストールされていないと、LINEで送れません。
+    ※「このページを閉じる」ボタンが正常に動作しない場合は、ブラウザの戻るボタンをお使いください。
   </div>
 
   <script>
