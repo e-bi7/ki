@@ -10,6 +10,11 @@
       text-align: center;
       padding: 2em;
     }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
     #copyText {
       background-color: #f0f8ff;
       color: #333;
@@ -43,6 +48,9 @@
 
   <h2>テキストをコピーまたはLINEで送る</h2>
 
+  <!-- 画像をここに追加 -->
+  <img src="https://via.placeholder.com/300x150.png?text=サンプル画像" alt="サンプル画像">
+
   <div id="copyText">apple</div>
 
   <br>
@@ -59,7 +67,6 @@
       });
     }
 
-    // ページ読み込み時にLINEのシェアリンクを設定
     window.onload = function() {
       const text = document.getElementById("copyText").innerText;
       const encodedText = encodeURIComponent(text);
