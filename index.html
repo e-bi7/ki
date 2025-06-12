@@ -46,36 +46,6 @@
 </head>
 <body>
 
-  <h2>テキストをコピーまたはLINEで送る</h2>
+  <h2>テキス
 
-  <!-- 画像をここに追加 -->
-  <img src="https://e-bi7.github.io/ki/logo1.png
-" alt="logo">
-
-  <div id="copyText">apple</div>
-
-  <br>
-
-  <button class="btn copy-btn" onclick="copyWord()">コピーする</button>
-
-  <a id="lineShareBtn" class="btn line-btn" href="#" target="_blank">LINEで送る</a>
-
-  <script>
-    function copyWord() {
-      const text = document.getElementById("copyText").innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        alert("コピーしました！");
-      });
-    }
-
-    window.onload = function() {
-      const text = document.getElementById("copyText").innerText;
-      const encodedText = encodeURIComponent(text);
-      const lineUrl = "https://line.me/R/msg/text/?" + encodedText;
-      document.getElementById("lineShareBtn").href = lineUrl;
-    }
-  </script>
-
-</body>
-</html>
 
