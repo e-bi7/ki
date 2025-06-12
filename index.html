@@ -34,6 +34,10 @@
       border-radius: 5px;
       cursor: pointer;
     }
+    .copy-btn {
+      background-color: #28a745;
+      color: white;
+    }
     .line-btn {
       background-color: #007a00; /* ちょっと暗めの緑 */
       color: white;
@@ -64,6 +68,10 @@
 
   <div id="copyText">apple</div>
 
+  <!-- 追加：コピーするボタン -->
+  <br>
+  <button class="btn copy-btn" onclick="copyWord()">コピーする</button>
+
   <br />
 
   <a id="lineShareBtn" class="btn line-btn" href="#" target="_blank">LINEで送る</a>
@@ -86,6 +94,13 @@
       document.getElementById("lineShareBtn").href = lineUrl;
     };
 
+    function copyWord() {
+      const text = document.getElementById("copyText").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("コピーしました！");
+      });
+    }
+
     function closePage() {
       window.close();
       setTimeout(() => {
@@ -96,4 +111,5 @@
 
 </body>
 </html>
+
 
