@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コピーできるページ</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; }
+    button { font-size: 1.2em; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h2>テキストコピーしてLINEに貼ろう！</h2>
+  <button id="textButton">ほにゃらら！このメッセージをコピーします。</button>
+  <br>
+  <button onclick="copyText()">コピーする</button>
+
+  <script>
+    function copyText() {
+      const text = document.getElementById("textButton").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("コピーしました！LINEに貼り付けてください");
+      }).catch(() => {
+        alert("コピーに失敗しました。");
+      });
+    }
+  </script>
+</body>
+</html>
