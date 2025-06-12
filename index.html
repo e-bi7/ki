@@ -11,7 +11,7 @@
       padding: 2em;
     }
     img {
-      width: 90%;
+      width: 80%;
       height: auto;
       margin-bottom: 20px;
     }
@@ -20,7 +20,8 @@
       color: #333;
       padding: 10px 20px;
       border-radius: 8px;
-      font-size: 1.5em;
+      font-size: 2em; /* 大きく */
+      font-weight: bold; /* 太字 */
       display: inline-block;
       margin: 20px 0;
     }
@@ -34,12 +35,13 @@
       cursor: pointer;
     }
     .line-btn {
-      background-color: #00c300;
+      background-color: #007a00; /* ちょっと暗めの緑 */
       color: white;
       text-decoration: none;
+      font-size: 1.3em; /* 文字を少し大きく */
     }
     .close-btn {
-      background-color: #dc3545;
+      background-color: #555555; /* 濃いめのグレー */
       color: white;
     }
     #notice {
@@ -56,15 +58,13 @@
 </head>
 <body>
 
-  <h2>テキストをコピーまたはLINEで送る</h2>
-
   <img src="https://e-bi7.github.io/ki/logo11.png" alt="ロゴ" />
+
+  <h2>ご来場ありがとうございます</h2>
 
   <div id="copyText">apple</div>
 
   <br />
-
-  <!-- 「コピーする」ボタンは削除 -->
 
   <a id="lineShareBtn" class="btn line-btn" href="#" target="_blank">LINEで送る</a>
 
@@ -82,15 +82,12 @@
     window.onload = function () {
       const text = document.getElementById("copyText").innerText;
       const encodedText = encodeURIComponent(text);
-      const lineUrl = "https://liff.line.me/2006933903-WNYmyPNm?sl=708a4c8e27" + encodedText;
+      const lineUrl = "https://line.me/R/msg/text/?" + encodedText;
       document.getElementById("lineShareBtn").href = lineUrl;
     };
 
     function closePage() {
-      // ページを閉じる（ほとんどのブラウザで動作するが制限あり）
       window.close();
-
-      // 動作しない場合のためにアラート表示
       setTimeout(() => {
         alert("このページを閉じることができませんでした。\nブラウザの戻るボタンを押してください。");
       }, 500);
