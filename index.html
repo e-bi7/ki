@@ -3,27 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>コピーできるページ</title>
+  <title>LINEで送れるページ</title>
   <style>
-    body { font-family: sans-serif; padding: 2em; }
-    button { font-size: 1.2em; margin: 10px 0; }
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2em;
+    }
+    #copyText {
+      background-color: #f0f8ff;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1.5em;
+      display: inline-block;
+      margin: 20px 0;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .copy-btn {
+      background-color: #28a745;
+      color: white;
+    }
+    .line-btn {
+      background-color: #00c300;
+      color: white;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-  <h2>テキストコピーしてLINEに貼ろう！</h2>
-  <button id="textButton">ほにゃらら！このメッセージをコピーします。</button>
+
+  <h2>テキストをコピーまたはLINEで送る</h2>
+
+  <div id="copyText">apple</div>
+
   <br>
-  <button onclick="copyText()">コピーする</button>
+
+  <button class="btn copy-btn" onclick="copyWord()">コピーする</button>
+
+  <a id="lineShareBtn" class="btn line-btn" href="#" target="_blank">LINEで送る</a>
 
   <script>
-    function copyText() {
-      const text = document.getElementById("textButton").innerText;
+    function copyWord() {
+      const text = document.getElementById("copyText").innerText;
       navigator.clipboard.writeText(text).then(() => {
-        alert("コピーしました！LINEに貼り付けてください");
-      }).catch(() => {
-        alert("コピーに失敗しました。");
+        alert("コピーしました！");
       });
     }
+
+    // ページ読み込み時にLINEのシェアリンクを設定
+    window.onload = function() {
+      const text = document.getElementById("copyText").innerText;
+      const encodedText = encodeURIComponent(text);
+      const lineUrl = "https://line.me/R/msg/text/?" + encodedText;
+      document.getElementById("lineShareBtn").href = lineUrl;
+    }
   </script>
+
 </body>
 </html>
