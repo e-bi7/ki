@@ -10,11 +10,11 @@
       text-align: center;
       padding: 2em;
     }
-img {
-  width: 80%;
-  height: auto;
-  margin-bottom: 20px;
-}
+    img {
+      width: 90%;
+      height: auto;
+      margin-bottom: 20px;
+    }
     #copyText {
       background-color: #f0f8ff;
       color: #333;
@@ -33,51 +33,68 @@ img {
       border-radius: 5px;
       cursor: pointer;
     }
-    .copy-btn {
-      background-color: #28a745;
-      color: white;
-    }
     .line-btn {
       background-color: #00c300;
       color: white;
       text-decoration: none;
     }
+    .close-btn {
+      background-color: #dc3545;
+      color: white;
+    }
+    #notice {
+      margin-top: 15px;
+      color: #555;
+      font-size: 0.9em;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      line-height: 1.4em;
+    }
   </style>
 </head>
 <body>
 
-  <br />
+  <h2>テキストをコピーまたはLINEで送る</h2>
 
-  <!-- GitHub Pagesにアップした画像 -->
   <img src="https://e-bi7.github.io/ki/logo11.png" alt="ロゴ" />
 
-  <br />
   <div id="copyText">apple</div>
 
-
-  <h2>ご来場ありがとうございます</h2>
-  <h2>江戸花魁奇譚</h2>
-  <h2>フォトグリーティング参加の合言葉はこちら</h2>
-
   <br />
-  <button class="btn copy-btn" onclick="copyWord()">コピーする</button>
+
+  <!-- 「コピーする」ボタンは削除 -->
 
   <a id="lineShareBtn" class="btn line-btn" href="#" target="_blank">LINEで送る</a>
 
-  <script>
-    function copyWord() {
-      const text = document.getElementById("copyText").innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        alert("コピーしました！");
-      });
-    }
+  <br />
 
+  <button class="btn close-btn" onclick="closePage()">このページを閉じる</button>
+
+  <div id="notice">
+    ※このページはスマホでの閲覧を想定しています。<br>
+    ※「このページを閉じる」ボタンが正常に動作しない場合は、ブラウザの戻るボタンをお使いください。<br>
+    ※LINEアプリがインストールされていないと、LINEで送れません。
+  </div>
+
+  <script>
     window.onload = function () {
       const text = document.getElementById("copyText").innerText;
       const encodedText = encodeURIComponent(text);
-      const lineUrl = "https://line.me/R/msg/text/?" + encodedText;
+      const lineUrl = "https://liff.line.me/2006933903-WNYmyPNm?sl=708a4c8e27" + encodedText;
       document.getElementById("lineShareBtn").href = lineUrl;
     };
+
+    function closePage() {
+      // ページを閉じる（ほとんどのブラウザで動作するが制限あり）
+      window.close();
+
+      // 動作しない場合のためにアラート表示
+      setTimeout(() => {
+        alert("このページを閉じることができませんでした。\nブラウザの戻るボタンを押してください。");
+      }, 500);
+    }
   </script>
 
 </body>
