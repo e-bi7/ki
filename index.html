@@ -12,7 +12,7 @@
     }
 
     img {
-      width: 100%;
+      width: 90%;
       height: auto;
       margin: 0 0 20px 0;
     }
@@ -41,7 +41,7 @@
 
     .btn {
       display: block;
-      width: 90%;
+      width: 95%;
       padding: 12px;
       margin: 10px auto;
       font-size: 1.1em;
@@ -88,7 +88,7 @@
 
   <div id="copyText">ornpg</div>
 
-  <a id="lineShareBtn" class="btn line-btn" href="https://liff.line.me/2006933903-WNYmyPNm?sl=708a4c8e27" target="_blank">
+  <a id="lineShareBtn" class="btn line-btn" href="#" target="_blank">
     合言葉をLINEに送る
   </a>
 
@@ -101,16 +101,23 @@
 
   <div class="lineNotice">
     ・上記のボタンをタップすると、この画面を閉じます。
-  </div><br>
-
+  </div>
 
   <h3>ご参加の確認事項</h3>
   <div class="lineNotice">
-    ※なんか下に余白があるので注意事項を記載してもよいかもしれない。<br>
-    ※ゲストが読むかどうかは知らんけど。<br>
+    ※なんか下に余白<br>
+    ※知らんけど。<br>
   </div>
 
   <script>
+    // 合言葉をLINEメッセージURLに含める
+    window.onload = function() {
+      const text = document.getElementById("copyText").innerText;
+      const encodedText = encodeURIComponent(text);
+      const lineUrl = "https://line.me/R/msg/text/?" + encodedText;
+      document.getElementById("lineShareBtn").href = lineUrl;
+    };
+
     function closePage() {
       window.close();
       setTimeout(() => {
@@ -121,5 +128,6 @@
 
 </body>
 </html>
+
 
 
