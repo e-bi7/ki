@@ -48,4 +48,77 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+    }
+
+    .copy-btn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .line-btn {
+      background-color: #009900;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    .close-btn {
+      background-color: #444;
+      color: white;
+    }
+
+    .lineNotice,
+    #notice {
+      max-width: 90%;
+      margin: 0 auto 20px;
+      font-size: 1em;
+      color: #555;
+      text-align: left;
+      line-height: 1.4em;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://e-bi7.github.io/ki/logo11.png" alt="ロゴ">
+
+  <h2>ご来場ありがとうございます</h2>
+  <h3>6月21日 江戸花魁奇譚</h3>
+  <h3>フォトグリーティング 参加の合言葉はこちら</h3>
+
+  <div id="copyText">ornpg</div>
+
+  <a id="lineShareBtn" class="btn line-btn" href="https://liff.line.me/2006933903-WNYmyPNm?sl=708a4c8e27" target="_blank">
+    合言葉をLINEに送る
+  </a>
+
+  <div class="lineNotice">
+    ・上記のボタンをタップすると、LINEの画面が開きます。<br>
+    ・送信先一覧から「イマーシブ・フォート東京」を選び、「転送」をタップすると、合言葉を入力できます。
+  </div>
+
+  <button class="btn close-btn" onclick="closePage()">今日は参加しない</button>
+
+  <div class="lineNotice">
+    ・上記のボタンをタップすると、この画面を閉じます。
+  </div>
+
+  <h3>ご参加の確認事項</h3>
+  <div class="lineNotice">
+    ※なんか下に余白があるので注意事項を記載してもよいかもしれない。<br>
+    ※ゲストが読むかどうかは知らんけど。<br>
+  </div>
+
+  <script>
+    function closePage() {
+      window.close();
+      setTimeout(() => {
+        alert("このページを閉じることができませんでした。\nブラウザの戻るボタンを押してください。");
+      }, 500);
+    }
+  </script>
+
+</body>
+</html>
+
 
