@@ -1,137 +1,51 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>リピート特典フォトグリーティング</title>
   <style>
     body {
       font-family: sans-serif;
       text-align: center;
-      padding: 2em;
+      padding: 1em;
     }
+
     img {
-      width: 95%;
+      width: 100%;
       height: auto;
-      margin-bottom: 20px;
+      margin: 0 0 20px 0;
     }
+
+    h2 {
+      font-size: 1.8em;
+      margin: 0.5em 0 0.2em;
+    }
+
+    h3 {
+      font-size: 1.2em;
+      font-weight: normal;
+      margin: 0.2em 0 1em;
+    }
+
     #copyText {
       background-color: #f0f8ff;
       color: #333;
       padding: 10px 20px;
       border-radius: 8px;
-      font-size: 2em;
+      font-size: 1.8em;
       font-weight: bold;
       display: inline-block;
       margin: 20px 0;
     }
+
     .btn {
-      display: block; /* ブロックにして幅を効かせる */
-      width: 95vw; /* 画面幅の95% */
-      max-width: 400px; /* 幅の最大値 */
-      padding: 10px 0;
-      margin: 10px auto; /* 中央寄せ */
+      display: block;
+      width: 95%;
+      padding: 12px;
+      margin: 10px auto;
       font-size: 1.1em;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      box-sizing: border-box; /* パディング込みで幅計算 */
-    }
-    .copy-btn {
-      background-color: #28a745;
-      color: white;
-    }
-    .line-btn {
-      background-color: #007a00;
-      color: white;
-      text-decoration: none;
-      font-size: 1.3em;
-    }
-    .close-btn {
-      background-color: #555555;
-      color: white;
-    }
-    #lineNotice {
-      max-width: 400px;
-      margin: 0 auto 20px;
-      font-size: 0.9em;
-      color: #555;
-      text-align: left;
-      line-height: 1.4em;
-    }
-    #notice {
-      max-width: 400px;
-      margin: 0 auto;
-      color: #555;
-      font-size: 0.9em;
-      text-align: left;
-      line-height: 1.4em;
-    }
-  </style>
-</head>
-<body>
-  <img src="https://e-bi7.github.io/ki/logo11.png" alt="ロゴ" />
-
-<h2>ご来場ありがとうございます</h2>
-<h3>6月21日 江戸花魁奇譚</h3>
-<h3>フォトグリーティング 参加の合言葉はこちら</h3>
-
-
-  <div id="copyText">ORN12345</div>
-
-
-<!-- LINEで送るボタン -->
-<a id="lineShareBtn" class="btn line-btn" href="https://liff.line.me/2006933903-WNYmyPNm?sl=708a4c8e27" target="_blank">
-  LINEで送る
-</a>
-
-  <!-- 「LINEで送る」の下の注意文 -->
-  <div id="lineNotice">
-    ・上記のボタンをタップすると、LINEの画面がひらきます。<br>
-    ・送信先一覧から「イマーシブ・フォート東京」を選び、「転送」をタップすると合言葉を入力できます。
-  </div>
-
-
-<button class="btn close-btn" onclick="closePage()">今日は参加しない</button>
-
-<!-- 追加：注意文 -->
-  <div id="lineNotice">
-    ・上記のボタンをタップすると、この画面を閉じます。<br>
-  </div>
-
-
-<br>
-<h2>フォトグリーティングの注意事項</h2>
-  <div id="notice">
-    ※なんか下に余白があるので注意事項を記載してもよいかもしれない。<br>
-    ※ゲストが読むかどうかは知らんけど。<br>
-    <br>
-  </div>
-
-  <script>
-    window.onload = function () {
-      const text = document.getElementById("copyText").innerText;
-      const encodedText = encodeURIComponent(text);
-      const lineUrl = "https://line.me/R/msg/text/?" + encodedText;
-      document.getElementById("lineShareBtn").href = lineUrl;
-    };
-
-    function copyWord() {
-      const text = document.getElementById("copyText").innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        alert("コピーしました！");
-      });
-    }
-
-    function closePage() {
-      window.close();
-      setTimeout(() => {
-        alert("このページを閉じることができませんでした。\nブラウザの戻るボタンを押してください。");
-      }, 500);
-    }
-  </script>
-
-</body>
-</html>
-
 
